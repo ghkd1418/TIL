@@ -9,12 +9,12 @@ int main()
 	{
 		scanf("%d", &arr[i]);
 	}
-	for (int j = 0; j < count; j++)
+	for (int j = 0; j < count; j++) 
 	{
-		for (int k = 0; k < count; k++)
+		for (int k = 0; k < count-1; k++)
 		{
-			if (arr[j] < arr[k])
-			{
+			if (arr[j] < arr[k])	
+			{										
 				temp = arr[j];
 				arr[j] = arr[k];
 				arr[k] = temp;
