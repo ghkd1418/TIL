@@ -1,31 +1,27 @@
 #include <stdio.h>
 int main()
 {
-	int count, max_weight;
+	int count, max_weight, result = 0, weight;
 	scanf("%d %d", &count, &max_weight);
-	int weight[count];
+
+	if (max_weight == 0)
+	{
+		printf("0");
+		return 0;
+	}
+	int sum = 0;
 	for (int i = 0; i < count; ++i)
 	{
-		scanf("%d", &weight[i]);
-	}
-	int sum = 0, result = 0;
-	for (int i = 0; i < count; ++i)
-	{
-		
-		sum += weight[i];
-		if (sum == max_weight)
+		scanf("%d", &weight);
+		if (weight + sum > max_weight)
 		{
+			sum = weight;
 			result++;
-			sum = 0;
 		}
-		else if ( sum > max_weight)
-		{
-			result++;
-			sum = 0;
-			i--;
-		}
+		else
+			sum += weight;
 	}
-	if(weight)
+	if (sum)
 		result++;
 	printf("%d\n", result);
 
