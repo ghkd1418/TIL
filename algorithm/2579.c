@@ -1,28 +1,22 @@
 #include <stdio.h>
-#define MAX(a, b) a>b?a:b
+
+#define MIN(x, y) x > y ? x : y
 
 int main()
 {
-	int N;
-	int dp[301];
-	int stair[301];
-
-	scanf("%d", &N);
-
-	for (int i = 1; i <= N; ++i)
+	
+	int n, dp[301] = {0, }, sum;
+	scanf("%d", &n);
+	for (int i = 1; i <= n; ++i)
 	{
-		scanf("%d", &stair[i]);
+		scanf("%d", &dp[i]);
 	}
 
-	dp[0] = 0;
-	dp[1] = stair[1];
-	dp[2] = stair[1] + stair[2];
-
-	for (int i = 3; i <= N; ++i)
+	sum = dp[n];
+	for (int i = 0; i < n; ++i)
 	{
-		dp[i] = stair[i] + (MAX(dp[i-2], stair[i-1] + dp[i-3]));
+		 
 	}
-
-	printf("%d", dp[N]);
+	printf("%d\n", sum);
 	return 0;
 }
