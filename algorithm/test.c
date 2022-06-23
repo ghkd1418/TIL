@@ -1,33 +1,18 @@
-#include<stdio.h>
-
-int main(void)
+#include <stdio.h>
+int main()
 {
-    int input = 0,DP[1001][10] = {0,},output = 0;
+	int n, comp[42] ={0,}, count = 0;
 
-    scanf("%d",&input);
-
-    for(int i=0;i<=9;i++)
-    {
-            DP[1][i] = 1;
-    }
-    
-    for(int i=2;i<=input;i++)
-    {
-        for(int j=0;j<=9;j++)
-        {
-            int sum = 0;
-
-            for(int k=j;k<=9;k++)
-            {
-                sum += DP[i-1][k] % 10007;
-            }
-
-            DP[i][j] = sum %10007;
-        }    
-    }
-    for(int k=0;k<=9;k++)
-    {
-        output += DP[input][k]%10007;
-    }
-    printf("%d",output%10007);
+	for (int i = 0; i < 10; ++i)
+	{
+		scanf("%d", &n);
+		comp[n%42] = 1;
+	}
+	
+	for (int i = 0; i < 42; ++i)
+	{
+		count += comp[i];
+	}
+	printf("%d\n", count);
+	return 0;
 }
