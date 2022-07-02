@@ -17,16 +17,14 @@ int main()
 			{
 				scanf("%d", &dp[i][j]);
 			}
-		
 		for (int i = 2; i <= n+1; ++i)
 		{
 			dp[0][i] += MAX(dp[1][i-1], dp[1][i-2]);
 			dp[1][i] += MAX(dp[0][i-1], dp[0][i-2]);
-			printf("dp[0][%d] = %d\n", i, dp[0][i]);
-			printf("dp[1][%d] = %d\n", i, dp[1][i]);
 		}
 		printf("%d\n", MAX(dp[0][n+1], dp[1][n+1]));
 	}
+	
 
 	return 0;
 }

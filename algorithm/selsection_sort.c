@@ -24,5 +24,5 @@ int main()
 	for (int i = 0; i < len; ++i)
 		printf("%d\n", arr[i]);
 
-	return 1;
+	return 0;
 }
