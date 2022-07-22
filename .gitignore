@@ -1,3 +1,4 @@
 
 *.exe
 test.c
+*.DS_Store
